@@ -18,7 +18,7 @@ language_flags = {
 @register.inclusion_tag('language_flags/flagrow.html', takes_context=True)
 def flags_for_language(context, count, language):
     count = int(count)
-    flags = language_flags[language]
+    flags = language_flags.get(language, [language])
     if len(flags) > count:
         flags = [flags[0]] + random.sample(flags[1:], count-1)
     return {'STATIC_URL': settings.STATIC_URL, 'flags': flags}

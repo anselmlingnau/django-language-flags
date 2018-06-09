@@ -21,6 +21,13 @@ Quick start
 
     {% load language_flags_tags %}
 
+   and include css or min.css in HTML ``<head>``::
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flags.css' %}">
+
+   Don't forget ``{% load staticfiles %}`` at the top of your template.
+
+
 3. You can use the `flags_for_language` tag to display a number
    of flags of nations where a language is spoken. Right now the
    language can be either English or German::
